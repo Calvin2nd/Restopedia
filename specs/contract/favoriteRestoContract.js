@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-undef */
 const itActsAsFavoriteRestoModel = (favoriteResto) => {
-  it('should return the movie that has been added', async () => {
+  it('should return the restaurant that has been added', async () => {
     favoriteResto.putFavResto({ id: 1 });
     favoriteResto.putFavResto({ id: 2 });
 
@@ -13,14 +13,14 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
       .toEqual(undefined);
   });
 
-  it('should refuse a movie from being added if it does not have the correct property', async () => {
+  it('should refuse a restaurant from being added if it does not have the correct property', async () => {
     favoriteResto.putFavResto({ aProperty: 'property' });
 
     expect(await favoriteResto.getAllFavResto())
       .toEqual([]);
   });
 
-  it('can return all of the movies that have been added', async () => {
+  it('can return all of the restaurant that have been added', async () => {
     favoriteResto.putFavResto({ id: 1 });
     favoriteResto.putFavResto({ id: 2 });
 
@@ -31,7 +31,7 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
       ]);
   });
 
-  it('should remove favorite movie', async () => {
+  it('should remove favorite restaurant', async () => {
     favoriteResto.putFavResto({ id: 1 });
     favoriteResto.putFavResto({ id: 2 });
     favoriteResto.putFavResto({ id: 3 });
@@ -45,7 +45,7 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
       ]);
   });
 
-  it('should handle request to remove a movie even though the movie has not been added', async () => {
+  it('should handle request to remove a restaurant even though the restaurant has not been added', async () => {
     favoriteResto.putFavResto({ id: 1 });
     favoriteResto.putFavResto({ id: 2 });
     favoriteResto.putFavResto({ id: 3 });

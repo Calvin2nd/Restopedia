@@ -31,7 +31,7 @@ const FavoriteRestoArray = {
   },
 
   deleteFavResto(id) {
-    favoriteResto = favoriteResto.filter((movie) => movie.id != id);
+    favoriteResto = favoriteResto.filter((resto) => resto.id != id);
   },
 };
 
