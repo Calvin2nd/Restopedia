@@ -13,7 +13,7 @@ const createRestoDetailTemplate = (resto) => `
         </div>
         <div class="detail-resto__img__desc">
             <p class="detail-resto__description">${resto.description}</p>
-            <img class="detail-resto__img" alt="${resto.name}" src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL('large') + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+            <img class="detail-resto__img lazyload" alt="${resto.name}" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL('large') + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
         </div>
         <div id="detail-resto__food__drink" class="detail-resto__food__drink">
             <div class="detail-resto__ff">
@@ -59,7 +59,7 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
     <div class="posts-item">
         <a href="/#/detail/${resto.id}">
-            <img class="posts-item__thumbnail" alt="${resto.name}" src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL('small') + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+            <img class="lazyload posts-item__thumbnail" alt="${resto.name}" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL('small') + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
         </a>
         <div class="posts-item__content">
             <a class="posts-item__title" href="/#/detail/${resto.id}">${resto.name}</a>
